@@ -8,7 +8,7 @@ Este script permite extrair estatísticas de jogadores do Soccer Manager Worlds 
 2. Entre na liga desejada.
 3. Abra as ferramentas de desenvolvedor do navegador (F12 ou fn + F12)
 4. Navegue até a guia "Console".
-5. Cole o código do script na área de console e pressione Enter para executá-lo.
+5. Cole o código do script na área de CONSOLE e pressione ENTER para executá-lo.
 6. Aguarde até que o script extraia todas as estatísticas dos jogadores.
 7. Após a conclusão, os dados serão baixados automaticamente em um arquivo Excel.
 
