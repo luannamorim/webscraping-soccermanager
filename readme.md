@@ -1,10 +1,10 @@
-# Extração de Estatísticas de Jogadores do Soccer Manager
+# Extrair Estatísticas do [Soccer Manager Worlds](https://www.soccermanager.com/game.php)
 
-Este script permite extrair estatísticas de jogadores do Soccer Manager a partir de uma liga específica. Para utilizá-lo, siga as instruções abaixo:
+Este script permite extrair estatísticas de jogadores do Soccer Manager Worlds a partir de uma liga específica. Para utilizá-lo, siga as instruções abaixo:
 
 ## Instrução Para Uso do Script
 
-1. Abra a página do [Soccer Manager](https://www.soccermanager.com/game.php) e faça login em sua conta.
+1. Abra a página do [Soccer Manager Worlds](https://www.soccermanager.com/game.php) e faça login em sua conta.
 2. Entre na liga desejada.
 3. Abra as ferramentas de desenvolvedor do navegador (F12 ou fn + F12)
 4. Navegue até a guia "Console".
