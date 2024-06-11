@@ -1,4 +1,4 @@
-const ids = []; 
+const ids = [];
 
 try {
     async function extrairIDsDaPagina(url) {
@@ -20,7 +20,7 @@ try {
     }
 
     // Número de páginas desejadas em "buscar" nas transferências
-    var paginas = 40
+    var paginas = 40;
 
     for (let i = 0; i <= paginas; i++) {
         const url = gerarURLPagina(i);
@@ -54,6 +54,12 @@ async function processarJogador(id) {
         var ratingElement = temp.querySelector("#playerScreen-table-factfile-row-rating");
         var rating = ratingElement ? ratingElement.textContent.trim() : "";
 
+        var contractElement = temp.querySelector(".playerfactfile_smalltext");
+        var contract = contractElement ? contractElement.textContent.trim() : "";
+
+        var ageElement = temp.querySelector("#playerScreen-table-factfile-row-age");
+        var age = ageElement ? ageElement.textContent.trim() : "";
+
         var tabelas = temp.querySelectorAll("#careerStatisticsTable");
 
         if (tabelas.length > 0) {
@@ -75,6 +81,8 @@ async function processarJogador(id) {
 
                         linhaDados += ";" + getPositionInfo(temp);
                         linhaDados += ";" + rating;
+                        linhaDados += ";" + contract;
+                        linhaDados += ";" + age;
 
                         dadosOrganizados += linhaDados + "\n";
                     }
@@ -108,7 +116,7 @@ function baixarExcel(nomeArquivo, conteudo) {
         console.log("Nenhum dado disponível para exportar.");
         return;
     }
-    const header = "Jogador;Temporada;Clube;Divisão;Jogos;Gols;Assistências;Melhor do jogo;Média;Amarelo;Vermelho;Posição;Nível";
+    const header = "Jogador;Temporada;Clube;Divisão;Jogos;Gols;Assistências;Melhor do jogo;Média;Amarelo;Vermelho;Posição;Nível;Contrato;Idade";
     const workbook = XLSX.utils.book_new();
     const worksheet = XLSX.utils.aoa_to_sheet([header.split(";")].concat(linhas.map(row => row.split(";"))));
     XLSX.utils.book_append_sheet(workbook, worksheet, "Dados");
@@ -134,11 +142,12 @@ async function exportarDados() {
     todosOsDados = todosOsDados.replace(/ soccer player profile - Soccer Manager/g, "");
 
     baixarExcel("dados", todosOsDados);
-    console.log('Extração finalizada!\ndeveloped by @luannamorim (github)')
+    console.log('Extração finalizada!\ndeveloped by @luannamorim (github)');
 }
 
 var script = document.createElement('script');
-script.onload = function() {
-    exportarDados();};
+script.onload = function () {
+    exportarDados();
+};
 script.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js';
 document.head.appendChild(script);
